@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I'm Tooru</title>
+    <link rel="stylesheet" href="./statics/styles/normalize.css">
+    <link rel="stylesheet" href="./statics/styles/heti.min.css">
+    <link rel="stylesheet" href="./statics/styles/style.css">
+</head>
+<body class="pos-relative">
+<div class="window-size filter pos-absolute pos-all-0 bg"></div>
+<div id="mori" class="window-size pos-relative">
+    <div data-depth="0.8" class="filter shrub deep-0"></div>
+    <div data-depth="1" class="filter pos-absolute pos-all-0 tree1"></div>
+    <div data-depth="0.8" class="filter shrub deep-1"></div>
+    <div data-depth="0.6" class="filter pos-absolute pos-all-0 tree2"></div>
+    <div data-depth="0.1" class=" light"></div>
+    <div data-depth="0.4" class="filter shrub deep-2"></div>
+    <div data-depth="0.2" class="filter pos-absolute pos-all-0 tree3"></div>
+    <div data-depth="0.1" class="filter shrub"></div>
+    <div class="pos-absolute pos-all-0">
+        <div class="content filter">
+            <div class="full-size no-filter">这里还没想好怎么设计</div>
+        </div>
+    </div>
+</div>
+<footer class="pos-absolute footer">
+    Copyright &copy; 2022 <a href="//tooru.ink">Tooru</a>. All rights reserved.
+</footer>
+
+<script src="./statics/scripts/parallax.min.js"></script>
+<script>
+
+    const mori = document.getElementById('mori');
+    const parallaxInstance = new Parallax(mori);
+
+</script>
+</body>
+</html>
