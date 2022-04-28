@@ -145,7 +145,7 @@ class FallElement {
             position: absolute;
             top: 0;
             left: 0;
-            transition: transform ${1000 * this.speed + 50}ms linear;
+            transition: transform ${1000 * this.speed - 50}ms linear;
             transform: ${this._getTransform()};
         `;
     }
