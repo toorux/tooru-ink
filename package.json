@@ -1,0 +1,23 @@
+{
+  "name": "tooru-ink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc",
+    "build:js": "gulp script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toorux/tooru-ink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toorux/tooru-ink/issues"
+  },
+  "homepage": "https://github.com/toorux/tooru-ink#readme",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  }
+}

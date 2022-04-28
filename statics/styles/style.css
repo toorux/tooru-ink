@@ -70,9 +70,11 @@ html, body {
     opacity: 0.5;
     background-image: url("../imgs/tree1.svg");
     background-position-y: 12vh;
-    background-position-x: 0;
+    background-position-x: 30%;
     background-repeat: repeat-x;
     background-size: 60% 100%;
+    left: -10% !important;
+    top: -10% !important;
 }
 
 .tree2 {
@@ -84,6 +86,8 @@ html, body {
     background-position-x: 20%;
     background-repeat: repeat-x;
     background-size: auto 100%;
+    left: -10% !important;
+    top: -10% !important;
 }
 
 .tree3 {
@@ -95,6 +99,8 @@ html, body {
     background-position-x: 50%;
     background-repeat: repeat-x;
     background-size: auto 100%;
+    left: -10% !important;
+    top: -10% !important;
 }
 
 .light {
@@ -107,7 +113,7 @@ html, body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: -20vh;
+    top: -20vh !important;
 }
 
 .shrub {
@@ -118,7 +124,7 @@ html, body {
                 0 85% / auto 20% url("../imgs/shrub.svg") repeat-x;
     position: absolute;
     left: -10% !important;
-    bottom: -10%;
+    bottom: -10% !important;
 }
 
 .shrub.deep-0 {
@@ -158,6 +164,12 @@ html, body {
     padding: 20px;
     text-align: center;
     color: rgba(160, 250, 171, 1);
+
+}
+
+.nothing {
+    /*transform: translateX();*/
+    transition: transform 400ms linear;
 }
 
 .footer {
