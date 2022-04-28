@@ -230,7 +230,7 @@ h2 {
     color: rgba(160, 250, 171, 1);
     text-align: center;
     padding: 20px;
-    background-image: linear-gradient(to top , rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    /** background-image: linear-gradient(to top , rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); */
 }
 
 a {
