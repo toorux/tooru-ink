@@ -22,6 +22,12 @@ html, body {
     z-index: -1;
 }
 
+.bg3
+{
+    background : linear-gradient(to top, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    z-index: -1;
+}
+
 .bg2
 {
     background : -moz-linear-gradient(12.1% 89.85% 35.03deg,rgba(0, 158, 157, 1) 0%,rgba(42, 182, 161, 1) 25.71%,rgba(160, 250, 171, 1) 99.92%);
@@ -165,7 +171,7 @@ h2 {
     margin: 55px 50px;
     height: calc(100% - 120px);
     box-shadow:  20px 20px 60px #001f34,
-    -20px -20px 60px #002033;
+    -20px -20px 60px rgba(4, 79, 107, 0.8);
     border-radius: 20px;
 }
 
