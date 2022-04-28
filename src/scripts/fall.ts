@@ -1,4 +1,5 @@
 /**
+ * 树叶、花瓣等物体飘落动画
  * @author Tooru(x)
  * @description My website: https://tooru.ink
  */
@@ -42,10 +43,6 @@ class Fall {
         this.speed = speed || 1;
 
         this.generateFallElement(this.density, true)
-
-        // setInterval(() => {
-        //     this.generateFallElement()
-        // }, 600)
 
         this.loop()
     }

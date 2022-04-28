@@ -143,7 +143,7 @@ html, body {
 }
 
 .filter {
-    filter: hue-rotate(10deg) brightness(90%) ;
+    filter: hue-rotate(30deg) brightness(90%) ;
 }
 
 .no-filter {
@@ -159,7 +159,7 @@ html, body {
     border-radius: 20px;
     background: rgba(78, 153, 153, 0.8);
     box-shadow:  20px 20px 60px #004d4b,
-    -20px -20px 60px #006865;
+    -20px -20px 60px #004341;
     backdrop-filter: blur(4px);
     padding: 20px;
     text-align: center;
