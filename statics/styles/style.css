@@ -60,9 +60,21 @@ html, body {
     bottom: 0;
 }
 
-#mori {
-    overflow: hidden;
+h1 {
+    font-size: 4vw;
+    margin: 0.5vw 0;
 }
+
+h2 {
+    font-size: 2.8vw;
+    margin: 0.5vw 0;
+}
+
+
+.filter {
+    filter: hue-rotate(30deg) brightness(90%) saturate(80%);
+}
+
 
 .tree1 {
     height: 120vh;
@@ -101,6 +113,7 @@ html, body {
     background-size: auto 100%;
     left: -10% !important;
     top: -10% !important;
+    filter: hue-rotate(30deg) saturate(60%);
 }
 
 .light {
@@ -120,8 +133,8 @@ html, body {
     height: 120vh;
     width: 120vw;
     opacity: 1;
-    background: -5% 85% / auto 20% url("../imgs/shrub.svg") repeat-x,
-                0 85% / auto 20% url("../imgs/shrub.svg") repeat-x;
+    background: -5% 80% / auto 20% url("../imgs/shrub.svg") repeat-x,
+                0 80% / auto 20% url("../imgs/shrub.svg") repeat-x;
     position: absolute;
     left: -10% !important;
     bottom: -10% !important;
@@ -141,30 +154,61 @@ html, body {
     opacity: 0.4;
     background-position-x: -20%;
 }
-
-.filter {
-    filter: hue-rotate(30deg) brightness(90%) ;
-}
-
 .no-filter {
     /*filter: hue-rotate(60deg) brightness(100%) ;*/
 }
 
 
-.content {
-    height: 60vh;
-    width: 100%;
-    max-width: 400px;
-    margin: 20vh auto;
+#mori {
+    overflow: hidden;
+    /*border: 80px solid transparent;*/
+    margin: 55px 50px;
+    height: calc(100% - 120px);
+    box-shadow:  20px 20px 60px #001f34,
+    -20px -20px 60px #002033;
     border-radius: 20px;
-    background: rgba(78, 153, 153, 0.8);
-    box-shadow:  20px 20px 60px #004d4b,
-    -20px -20px 60px #004341;
-    backdrop-filter: blur(4px);
-    padding: 20px;
-    text-align: center;
-    color: rgba(160, 250, 171, 1);
+}
 
+.content {
+      color: rgba(160, 250, 171, 1);
+      text-shadow: 5px 5px 10px rgba(0, 87, 81, 1);
+  }
+
+.me .content {
+    /*height: 60vh;*/
+    /*width: 100%;*/
+    /*max-width: 400px;*/
+    /*margin: 12vh auto;*/
+    /*border-radius: 20px;*/
+    /*background: rgba(78, 153, 153, 0.8);*/
+    /*box-shadow:  20px 20px 60px #004d4b,*/
+    /*-20px -20px 60px #004341;*/
+    /*backdrop-filter: blur(4px);*/
+    padding: 60px 80px;
+    text-align: right;
+}
+
+.me .content header .desc {
+    display: inline-block;
+    text-align: right;
+    margin-top: 2vw;
+}
+
+.ink {
+    left: 0;
+    padding: 60px 80px;
+}
+
+.ink .content {
+    /*text-align: ;*/
+    font-size: 1.2vw;
+    text-shadow: 2px 2px 10px rgb(0, 39, 36);
+}
+
+.wall {
+    border: 100px solid;
+    border-image-source: linear-gradient(56.29deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    border-image-slice: 1;
 }
 
 .nothing {

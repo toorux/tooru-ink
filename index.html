@@ -9,26 +9,43 @@
     <link rel="stylesheet" href="./statics/styles/style.css">
 </head>
 <body class="pos-relative">
-<div class="window-size filter pos-absolute pos-all-0 bg"></div>
-<div id="mori" class="window-size pos-relative">
-    <div data-depth="0.8" class="filter shrub deep-0"></div>
-    <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves3" style="opacity: 0.4;"></div>
-    <div data-depth="1" class="filter pos-absolute pos-all-0 tree1"></div>
-    <div data-depth="0.8" class="filter shrub deep-1"></div>
-    <div data-depth="0.6" class="filter pos-absolute pos-all-0 tree2"></div>
-    <div data-depth="0.1" class="light"></div>
-    <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves2" style="opacity: 0.6;"></div>
-    <div data-depth="0.4" class="filter shrub deep-2"></div>
-    <div data-depth="0.2" class="filter pos-absolute pos-all-0 tree3"></div>
-    <div data-depth="0.1" class="filter shrub"></div>
-    <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves1" style="opacity: 0.8"></div>
-    <div class="pos-absolute pos-all-0">
-        <div class="content filter">
-            <div class="full-size">这里还没想好怎么设计</div>
+<div class="window-size pos-absolute pos-all-0 bg"></div>
+<div class="window-size pos-absolute pos-all-0 mori-clip">
+    <div id="mori" class="pos-relative">
+        <div class="window-size filter pos-absolute pos-all-0 bg"></div>
+        <div data-depth="0.8" class="filter shrub deep-0"></div>
+        <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves3" style="opacity: 0.4;"></div>
+        <div data-depth="1" class="filter pos-absolute pos-all-0 tree1"></div>
+        <div data-depth="0.8" class="filter shrub deep-1"></div>
+        <div data-depth="0.6" class="filter pos-absolute pos-all-0 tree2"></div>
+        <div data-depth="0.1" class="light"></div>
+        <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves2" style="opacity: 0.6;"></div>
+        <div data-depth="0.4" class="filter shrub deep-2"></div>
+        <div data-depth="0.2" class="filter pos-absolute pos-all-0 tree3"></div>
+        <div data-depth="0.1" class="filter shrub"></div>
+        <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves1" style="opacity: 0.8"></div>
+        <div data-depth="0" class="pos-absolute pos-all-0 me">
+            <div class="content filter full-size">
+                <div class="full-size no-filter">
+                    <header>
+                        <h1>Tooru</h1>
+                        <h2>「彻<span style="display: inline-block;width: 1.5vw">」</span></h2>
+                        <p class="desc heti">这个名字来自于「挪威的森林」中主角「渡边彻」<br/>但一般我会使用「咸鱼」这个名字。</p>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <div class="pos-absolute filter ink">
+            <div class="content heti heti--vertical">
+                <p>「每个人的心中都有一片属于自己的森林</p>
+                <p>迷失的人迷失了，相遇的人会再相遇」</p>
+            </div>
         </div>
     </div>
 </div>
-<footer class="pos-absolute footer">
+<!--<div class="wall pos-absolute pos-all-0 full-size"></div>-->
+
+<footer class="pos-absolute filter footer">
     Copyright &copy; 2022 <a href="//tooru.ink">Tooru</a> - 咸鱼. All rights reserved.
 </footer>
 
