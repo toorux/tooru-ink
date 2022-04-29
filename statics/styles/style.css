@@ -178,6 +178,8 @@ h2 {
       text-shadow: 5px 5px 10px rgba(0, 87, 81, 1);
   }
 
+
+
 .me .content {
     /*height: 60vh;*/
     /*width: 100%;*/
@@ -192,10 +194,15 @@ h2 {
     text-align: right;
 }
 
+.me .content header h2 {
+    margin-bottom: 2.4vh;
+}
+
 .me .content header .desc {
     display: inline-block;
     text-align: right;
-    margin-top: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 0.2vh;
 }
 
 .ink {
