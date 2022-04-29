@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./statics/styles/normalize.css">
     <link rel="stylesheet" href="./statics/styles/heti.min.css">
     <link rel="stylesheet" href="./statics/styles/style.css">
+    <style>
+        .bg3
+        {
+            background : linear-gradient(to top, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+            z-index: -1;
+        }
+    </style>
 </head>
 <body class="pos-relative">
 <div class="window-size pos-absolute pos-all-0 bg3"></div>
@@ -25,10 +32,21 @@
         <div data-depth="0.2" class="filter pos-absolute pos-all-0 tree3"></div>
         <div data-depth="0.1" class="filter shrub"></div>
         <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves1" style="opacity: 0.8"></div>
+        <div class="pos-absolute filter ink" v-scope>
+            <div class="content heti heti--vertical" v-if="!vueIsLoaded">
+                <p>「倘若周围一片漆黑</p>
+                <p>那就只能静待眼睛习惯黑暗」</p>
+            </div>
+            <div class="content heti heti--vertical hide" v-bind:style="{display: vueIsLoaded ? 'block' : 'none'}">
+                <p v-for="ink in inks" class="" v-bind:style="{fontSize: ink.size}">
+                    <span v-for="str in ink.list" style="display: block">{{ str }}</span>
+                </p>
+            </div>
+        </div>
         <div data-depth="0" class="pos-absolute pos-all-0 me">
             <div class="content filter full-size">
                 <div class="full-size no-filter">
-                    <header>
+                    <header >
                         <h1>Tooru</h1>
                         <h2>「彻<span style="display: inline-block;width: 1.5vw">」</span></h2>
                         <p class="desc heti">名字来自于「挪威的森林」中主角「渡边彻」<br/>我也会使用「咸鱼」这个名字。</p>
@@ -36,20 +54,14 @@
                 </div>
             </div>
         </div>
-        <div class="pos-absolute filter ink">
-            <div class="content heti heti--vertical">
-                <p>「每个人的心中都有一片属于自己的森林</p>
-                <p>迷失的人迷失了，相逢的人会再相逢」</p>
-            </div>
-        </div>
     </div>
 </div>
-<!--<div class="wall pos-absolute pos-all-0 full-size"></div>-->
 
 <footer class="pos-absolute filter footer">
     Copyright &copy; 2022 <a href="//tooru.ink">Tooru</a> - 咸鱼. All rights reserved.
 </footer>
 
+<script src="https://unpkg.com/petite-vue"></script>
 <script src="./statics/scripts/parallax.min.js"></script>
 <script src="./statics/scripts/fall.js"></script>
 <script>
@@ -72,6 +84,25 @@
 
     const leaves1 = document.getElementById("leaves1")
     const fall1 = new Fall(leaves1, leaves, 15, 5)
+
+    PetiteVue.createApp({
+        inks: [
+            {
+                "size": "2.4vh",
+                "list": ["「倘若周围一片漆黑", "那就只能静待眼睛习惯黑暗」"]
+            },
+            {
+                "size": "2.4vh",
+                "list": ["「哪儿有人会喜欢孤独", "只是害怕失望罢了」"]
+            },
+            {
+                "size": "2.4vh",
+                "list": ["「我几次朝着夜幕伸出手去，指尖毫无所触", "那小小的光点总是同指尖保持着一点点不可触及的距离」"]
+            }
+        ],
+        index: 0,
+        vueIsLoaded: true,
+    }).mount();
 
 </script>
 </body>

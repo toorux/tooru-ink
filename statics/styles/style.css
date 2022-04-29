@@ -22,12 +22,6 @@ html, body {
     z-index: -1;
 }
 
-.bg3
-{
-    background : linear-gradient(to top, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
-    z-index: -1;
-}
-
 .bg2
 {
     background : -moz-linear-gradient(12.1% 89.85% 35.03deg,rgba(0, 158, 157, 1) 0%,rgba(42, 182, 161, 1) 25.71%,rgba(160, 250, 171, 1) 99.92%);
@@ -38,6 +32,10 @@ html, body {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#009E9D', endColorstr='#A0FAAB' ,GradientType=0)";
     background : linear-gradient(54.97deg, rgba(0, 158, 157, 1) 0%, rgba(42, 182, 161, 1) 25.71%, rgba(160, 250, 171, 1) 99.92%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009E9D',endColorstr='#A0FAAB' , GradientType=1);
+}
+
+.hide {
+    display: none;
 }
 
 
@@ -114,7 +112,7 @@ h2 {
     opacity: 0.8;
     background-image: url("../imgs/tree2.svg");
     background-position-y: 0vh;
-    background-position-x: 50%;
+    background-position-x: 25%;
     background-repeat: repeat-x;
     background-size: auto 100%;
     left: -10% !important;
@@ -190,7 +188,7 @@ h2 {
     /*box-shadow:  20px 20px 60px #004d4b,*/
     /*-20px -20px 60px #004341;*/
     /*backdrop-filter: blur(4px);*/
-    padding: 60px 80px;
+    padding: 7vh 6vw 0 0;
     text-align: right;
 }
 
@@ -202,13 +200,17 @@ h2 {
 
 .ink {
     left: 0;
-    padding: 60px 80px 0;
+    padding: 7vh 0 0 6vw;
 }
 
 .ink .content {
     /*text-align: ;*/
     font-size: 3vh;
     text-shadow: 2px 2px 10px rgb(0, 39, 36);
+}
+
+.ink .content p {
+    margin: 0 3vw 0 0;
 }
 
 .wall {
