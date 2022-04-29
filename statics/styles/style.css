@@ -24,6 +24,7 @@ html, body {
     margin: 0;
     /*color: #fff;*/
     color: var(--textColor);
+    overflow: hidden;
 }
 
 .bg
