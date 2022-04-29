@@ -1,13 +1,15 @@
 /**
+ * 树叶、花瓣等物体飘落动画
  * @author Tooru(x)
  * @description My website: https://tooru.ink
  */
 class FallItem {
-    constructor(path, width, height, isPx) {
+    constructor(path, width, height, isPx, dir) {
         this.path = path;
         this.width = width === null ? undefined : width;
         this.height = height === null ? undefined : height;
         this.isPx = isPx === true;
+        this.dir = dir;
         if (!width && !height) {
             this.width = 1;
             this.isPx = false;
@@ -22,9 +24,6 @@ class Fall {
         this.density = density || 0.8;
         this.speed = speed || 1;
         this.generateFallElement(this.density, true);
-        // setInterval(() => {
-        //     this.generateFallElement()
-        // }, 600)
         this.loop();
     }
     static random(min, max) {
@@ -61,9 +60,9 @@ class FallElement {
         this.container = container;
         this.cw = this.container.offsetWidth;
         this.ch = this.container.offsetHeight;
-        this.dir = Fall.random(0, 1) ? -1 : 1; // 方向
+        this.dir = item.dir ? item.dir : (Fall.random(0, 1) ? -1 : 1); // 方向
         this.rotate = Fall.random(0, 360);
-        this.posX = Fall.random(0, 10000) / 100;
+        this.posX = Fall.random(-10000, 10000) / 100;
         // Todo: 改成负数
         this.posY = (isInit ? (Fall.random(0, 1) ? -1 : 1) : -1) * Fall.random(5, 95);
         let scale = Fall.random(60, 120) / 100;
@@ -98,7 +97,7 @@ class FallElement {
             position: absolute;
             top: 0;
             left: 0;
-            transition: transform ${1000 * this.speed}ms linear;
+            transition: transform ${1000 * this.speed - 50}ms linear;
             transform: ${this._getTransform()};
         `;
     }

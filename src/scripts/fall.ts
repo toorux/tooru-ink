@@ -10,12 +10,14 @@ class FallItem {
     width?: number
     height?: number
     isPx: boolean
+    dir?: number
 
-    constructor(path: string, width?: number | null, height?: number | null, isPx?: boolean) {
+    constructor(path: string, width?: number | null, height?: number | null, isPx?: boolean, dir?: number) {
         this.path = path;
         this.width = width === null ? undefined : width
         this.height = height === null ? undefined : height
         this.isPx = isPx === true
+        this.dir = dir
 
         if (!width && !height) {
             this.width = 1
@@ -97,10 +99,10 @@ class FallElement {
         this.cw = this.container.offsetWidth
         this.ch = this.container.offsetHeight
 
-        this.dir = Fall.random(0,1) ? -1 : 1 // 方向
+        this.dir = item.dir ? item.dir : (Fall.random(0,1) ? -1 : 1) // 方向
 
         this.rotate = Fall.random(0, 360)
-        this.posX = Fall.random(0, 10000) / 100
+        this.posX = Fall.random(-10000, 10000) / 100
         // Todo: 改成负数
         this.posY = (isInit ? (Fall.random(0,1) ? -1 : 1) : -1) * Fall.random(5, 95)
 

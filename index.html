@@ -16,10 +16,11 @@
         }
     </style>
 </head>
-<body class="pos-relative">
+<body class="pos-relative mori">
 <div class="window-size pos-absolute pos-all-0 bg3"></div>
 <div class="window-size pos-absolute pos-all-0 mori-clip">
     <div id="mori" class="pos-relative">
+
         <div class="window-size filter pos-absolute pos-all-0 bg"></div>
         <div data-depth="0.8" class="filter shrub deep-0"></div>
         <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves3" style="opacity: 0.4;"></div>
@@ -32,7 +33,13 @@
         <div data-depth="0.2" class="filter pos-absolute pos-all-0 tree3"></div>
         <div data-depth="0.1" class="filter shrub"></div>
         <div data-depth="0" class="filter pos-absolute pos-all-0"  id="leaves1" style="opacity: 0.8"></div>
-        <div class="pos-absolute filter ink" v-scope>
+
+    </div>
+</div>
+
+<div class=" pos-absolute pos-all-0">
+    <div class="body pos-relative">
+        <div class="pos-absolute pos-all-0 filter ink" v-scope>
             <div class="content heti heti--vertical" v-if="!vueIsLoaded">
                 <p>「倘若周围一片漆黑</p>
                 <p>那就只能静待眼睛习惯黑暗」</p>
@@ -50,18 +57,25 @@
                         <h1>Tooru</h1>
                         <h2>「彻<span style="display: inline-block;width: 1.5vw">」</span></h2>
                         <div>
-                            <p class="desc heti">
+                            <p class=" heti">
                                 名字来自于「挪威的森林」中主角「渡边彻」<br/>
                                 我一般使用「咸鱼」这个名字。<br/>
                             </p>
                         </div>
                         <div>
-                            <p class="desc heti">
+                            <p class=" heti">
                                 最喜欢的动漫是「冰菓」<br/>
-                                因此正在考虑开发冰菓主题。
+                                因此这里还有个<a href="./sakura.html">冰菓</a>风格，<br>
+                                不过我不太满意，或许会重写。
                             </p>
                         </div>
                     </header>
+                    <div>
+                        <h3>「友情链接」</h3>
+                        <div class=" heti links">
+                            <a href="http://blog.ll00.cn">零零博客</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,7 +86,7 @@
     Copyright &copy; 2022 <a href="//tooru.ink">Tooru</a> - 咸鱼. All rights reserved.
 </footer>
 
-<script src="https://unpkg.com/petite-vue"></script>
+<script src="./statics/scripts/vue.js"></script>
 <script src="./statics/scripts/parallax.min.js"></script>
 <script src="./statics/scripts/fall.js"></script>
 <script>

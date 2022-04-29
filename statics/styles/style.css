@@ -1,12 +1,29 @@
 * {
     box-sizing: border-box;
+    --margin-width: 50px;
+    --margin-height: 55px;
+}
+
+.mori {
+    --textColor: rgba(160, 250, 171, 1);
+    --textShadow: rgba(0, 87, 81, 1);
+    --contentShadow1: #001f34;
+    --contentShadow2: rgba(4, 79, 107, 0.8);
+}
+
+.sakura {
+    --textColor: rgb(255, 237, 237);
+    --textShadow: rgb(127, 80, 80);
+    --contentShadow1: #d9c2c2;
+    --contentShadow2: #ffffff;
 }
 
 html, body {
     height: 100%;
     padding: 0;
     margin: 0;
-    color: #fff;
+    /*color: #fff;*/
+    color: var(--textColor);
 }
 
 .bg
@@ -57,6 +74,10 @@ html, body {
     position: absolute;
 }
 
+.pos-fixed {
+    position: fixed;
+}
+
 .pos-all-0 {
     top: 0;
     left: 0;
@@ -74,8 +95,16 @@ h2 {
     margin: 0.5vw 0;
 }
 
+.sakura h1 {
+    font-size: 5.4vw;
+}
 
-.filter {
+.sakura h2 {
+    font-size: 3.4vw;
+}
+
+
+.mori .filter {
     filter: hue-rotate(30deg) brightness(90%) saturate(80%);
 }
 
@@ -166,32 +195,28 @@ h2 {
 #mori {
     overflow: hidden;
     /*border: 80px solid transparent;*/
-    margin: 55px 50px;
+    margin: var(--margin-height) var(--margin-width);
     height: calc(100% - 120px);
-    box-shadow:  20px 20px 60px #001f34,
-    -20px -20px 60px rgba(4, 79, 107, 0.8);
+    box-shadow:  20px 20px 40px var(--contentShadow1),
+    -20px -20px 40px var(--contentShadow2);
     border-radius: 20px;
 }
 
 .content {
-      color: rgba(160, 250, 171, 1);
-      text-shadow: 5px 5px 10px rgba(0, 87, 81, 1);
-  }
+  text-shadow: 3px 3px 10px var(--textShadow);
+}
 
-
+.me {
+    z-index: 999;
+}
 
 .me .content {
-    /*height: 60vh;*/
-    /*width: 100%;*/
-    /*max-width: 400px;*/
-    /*margin: 12vh auto;*/
-    /*border-radius: 20px;*/
-    /*background: rgba(78, 153, 153, 0.8);*/
-    /*box-shadow:  20px 20px 60px #004d4b,*/
-    /*-20px -20px 60px #004341;*/
-    /*backdrop-filter: blur(4px);*/
     padding: 7vh 6vw 0 0;
     text-align: right;
+}
+
+.me .content header {
+    margin-bottom: 10vh;
 }
 
 .me .content header h2 {
@@ -213,17 +238,11 @@ h2 {
 .ink .content {
     /*text-align: ;*/
     font-size: 3vh;
-    text-shadow: 2px 2px 10px rgb(0, 39, 36);
+    text-shadow: 0px 0px 8px var(--textShadow);
 }
 
 .ink .content p {
     margin: 0 3vw 0 0;
-}
-
-.wall {
-    border: 100px solid;
-    border-image-source: linear-gradient(56.29deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
-    border-image-slice: 1;
 }
 
 .nothing {
@@ -231,24 +250,139 @@ h2 {
     transition: transform 400ms linear;
 }
 
+.body {
+    margin: var(--margin-height) var(--margin-width);
+    height: calc(100% - 120px);
+    border-radius: 20px;
+}
+
 .footer {
     left: 0;
     right: 0;
     bottom: 0;
     height: auto;
-    color: rgba(160, 250, 171, 1);
     text-align: center;
     padding: 20px;
     /** background-image: linear-gradient(to top , rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); */
 }
 
 a {
-    color: rgba(160, 250, 171, 1);
-
+    display: inline-block;
+    color: var(--textColor);
+    filter: saturate(40%);
+    cursor: pointer;
+    text-decoration: none;
+    /*padding: 0 2px;*/
 }
 
-@media (min-width: 400px)  {
+.links {
+    padding-right: 1vw;
+}
 
 
-    
+.sakura #leaves3 {
+    filter: blur(2px);
+}
+
+.sakura #leaves2 {
+    filter: blur(1px);
+}
+
+.sakura .tree {
+    filter: hue-rotate(170deg) saturate(20%);
+}
+
+.sakura .shrub {
+    filter: hue-rotate(60deg) saturate(80%);
+}
+
+.tree1 {
+    filter: blur(8px);
+}
+
+.tree2 {
+    filter: blur(4px);
+}
+
+.hana-container {
+    width: 100vw;
+    height: 100vh;
+    left: -5vw !important;
+    top: 8vh !important;
+}
+
+.hana {
+    position: absolute;
+    width: 20%;
+}
+
+.hana1 {
+    width: 60vw;
+    transform: rotate(15deg);
+    transform-origin: left bottom;
+    top: -10vw !important;
+    z-index: 2;
+}
+
+.hana2 {
+    width: 15vw;
+    transform: rotate(25deg);
+    transform-origin: bottom center;
+    left: 1vw !important;
+    top: 0vw !important;
+    z-index: 1;
+}
+
+.hana3 {
+    width: 15vw;
+    /*transform: rotate(35deg);*/
+    transform-origin: bottom center;
+    left: 6vw;
+    top: 18vw;
+    z-index: 3;
+}
+
+.hana4 {
+    width: 20vw;
+    transform-origin: bottom center;
+    left: 32vw !important;
+    top: 10vw !important;
+    z-index: 4;
+}
+
+.hana5 {
+    width: 15vw;
+    transform: rotate(30deg);
+    transform-origin: bottom center;
+    left: 38vw !important;
+    top: 5vw !important;
+    z-index: 4;
+}
+
+.hana6 {
+    width: 40vw;
+    transform: rotate(0deg);
+    transform-origin: left bottom;
+    top: 3vw !important;
+    left: -5vw !important;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.hana7 {
+    width: 18vw;
+    transform: rotate(80deg);
+    transform-origin: bottom center;
+    left: -10vw !important;
+    top: -5vw !important;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.sakura footer {
+    color: #333;
+}
+
+.sakura footer a {
+    color: #666;
 }
