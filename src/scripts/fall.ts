@@ -41,7 +41,7 @@ class Fall {
     constructor(container: HTMLElement, items: FallItem[], density?: number, speed?: number) {
         this.container = container;
         this.items = items;
-        this.density = density || 0.8;
+        this.density = density || 20;
         this.speed = speed || 1;
 
         this.generateFallElement(this.density, true)
@@ -103,7 +103,7 @@ class FallElement {
 
         this.rotate = Fall.random(0, 360)
         this.posX = Fall.random(-10000, 10000) / 100
-        // Todo: 改成负数
+
         this.posY = (isInit ? (Fall.random(0,1) ? -1 : 1) : -1) * Fall.random(5, 95)
 
         let scale = Fall.random(60, 120) / 100
@@ -147,7 +147,7 @@ class FallElement {
             position: absolute;
             top: 0;
             left: 0;
-            transition: transform ${1000 * this.speed - 50}ms linear;
+            transition: transform ${1000 * this.speed + 200}ms linear;
             transform: ${this._getTransform()};
         `;
     }
