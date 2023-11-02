@@ -4,6 +4,11 @@
     --margin-height: 55px;
 }
 
+head, body {
+    height: 100%;
+    width: 100%;
+}
+
 .mori {
     --textColor: rgba(160, 250, 171, 1);
     --textShadow: rgba(0, 87, 81, 1);
@@ -514,8 +519,8 @@ a:hover::after {
 @media only screen and (max-aspect-ratio: 9 / 10){
 
     * {
-        --margin-width: 25px;
-        --margin-height: 45px;
+        --margin-width: 20px;
+        --margin-height: 35px;
     }
 
     #inks {
@@ -598,6 +603,10 @@ a:hover::after {
     }
 
     .body {
+        height: calc(100% - 100px);
+    }
+
+    #mori {
         height: calc(100% - 100px);
     }
 
