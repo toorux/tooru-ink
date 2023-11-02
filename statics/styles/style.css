@@ -620,4 +620,8 @@ a:hover::after {
         letter-spacing: 0.125em;
     }
 
+    .header {
+        margin-bottom: 6vh !important;
+    }
+
 }
