@@ -16,7 +16,7 @@
         }
     </style>
 </head>
-<body class="pos-relative mori">
+<body class="pos-relative mori animation-on">
 <div class="window-size pos-absolute pos-all-0 bg3"></div>
 <div class="window-size pos-absolute pos-all-0 mori-clip">
     <div id="mori" class="pos-relative">
@@ -39,44 +39,71 @@
 
 <div class=" pos-absolute pos-all-0">
     <div class="body pos-relative">
-        <div class="pos-absolute pos-all-0 filter ink" v-scope>
-            <div class="content heti heti--vertical" v-if="!vueIsLoaded">
-                <p>「倘若周围一片漆黑</p>
-                <p>那就只能静待眼睛习惯黑暗」</p>
+        <div class="pos-absolute pos-all-0 filter inks" id="inks">
+            <div class="content heti heti--vertical" >
+                <p class="ink-item">
+                    <span style="display: block">「倘若周围一片漆黑</span>
+                    <span style="display: block">那就只能静待眼睛习惯黑暗」</span>
+                </p>
+                <p class="ink-item">
+                    <span style="display: block">「哪儿有人会喜欢孤独</span>
+                    <span style="display: block">只是害怕失望罢了」</span>
+                </p>
+                <p class="ink-item">
+                    <span style="display: block">「我几次朝着夜幕伸出手去，指尖毫无所触</span>
+                    <span style="display: block">那小小的光点总是同指尖保持着一点点不可触及的距离」</span>
+                </p>
             </div>
-            <div class="content heti heti--vertical hide" v-bind:style="{display: vueIsLoaded ? 'block' : 'none'}">
-                <p v-for="ink in inks" class="" v-bind:style="{fontSize: ink.size}">
-                    <span v-for="str in ink.list" style="display: block">{{ str }}</span>
+        </div>
+        <div class="pos-absolute pos-all-0 filter inks" id="inkm">
+            <div class="content heti heti--vertical"  data-depth="0.5">
+                <p class="ink-item">
+                    <span style="display: block">「我几次朝着夜幕伸出手去，指尖毫无所触</span>
+                    <span style="display: block">那小小的光点总是同指尖保持着一点点不可触及的距离」</span>
                 </p>
             </div>
         </div>
         <div data-depth="0" class="pos-absolute pos-all-0 me">
             <div class="content filter full-size">
-                <div class="full-size no-filter">
-                    <header >
-                        <h1>Tooru</h1>
-                        <h2>「彻<span style="display: inline-block;width: 1.5vw">」</span></h2>
+                <div class="full-size">
+                    <header class="header">
+                        <h1>TOORU</h1>
+                        <h2>「彻<span class="right-bracket">」</span></h2>
                         <div>
                             <p class=" heti">
                                 名字来自于「挪威的森林」中主角「渡边彻」<br/>
                                 我一般使用「咸鱼」这个名字。<br/>
                             </p>
                         </div>
-                        <div style="display: none;">
-                            <p class="heti">
-                                最喜欢的动漫是「冰菓」<br/>
-                                因此这里还有个<a href="./sakura.html">冰菓</a>风格，<br>
-                                不过不太满意，或许会重写。
-                            </p>
-                        </div>
                     </header>
-                    <div class="heti">
-                        <h3>「友情链接」</h3>
+                    <div class="heti info">
+                        <h3>「 C O N T A C T 」</h3>
                         <div class=" links">
+                            <a href="mailto:contact@tooru.ink">CONTACT@TOORU.INK</a>
+                        </div>
+                        <h3 style="opacity: 0.8" class="friend">「 L I K N S 」</h3>
+                        <div style="opacity: 0.8" class="friend links">
                             <a href="http://blog.ll00.cn">零零博客</a>
                         </div>
+                        <div class="m-ink links">
+                            <p class="ink-item">
+                                <span style="display: block">「我几次朝着夜幕伸出手去，指尖毫无所触</span>
+                                <span style="display: block">那小小的光点总是同指尖保持着一点点不可触及的距离」</span>
+                            </p>
+                        </div>
+
+
+<!--                        <div class="pos-absolute pos-all-0 filter inks" id="inkb">-->
+<!--                            <div class="content heti heti&#45;&#45;vertical"  data-depth="0.5">-->
+<!--                                <p class="ink-item">-->
+<!--                                    <span style="display: block">「我几次朝着夜幕伸出手去，指尖毫无所触</span>-->
+<!--                                    <span style="display: block">那小小的光点总是同指尖保持着一点点不可触及的距离」</span>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                 </div>
+                <h2 class="cn-name-m">「彻<span class="right-bracket">」</span></h2>
             </div>
         </div>
     </div>
@@ -91,8 +118,6 @@
 <script src="./statics/scripts/fall.js"></script>
 <script>
 
-    const mori = document.getElementById('mori');
-    const parallaxInstance = new Parallax(mori);
 
     /** @type {FallItem[]} */
     const leaves = [];
@@ -110,24 +135,48 @@
     const leaves1 = document.getElementById("leaves1")
     const fall1 = new Fall(leaves1, leaves, 15, 5)
 
-    PetiteVue.createApp({
-        inks: [
-            {
-                "size": "2.4vh",
-                "list": ["「倘若周围一片漆黑", "那就只能静待眼睛习惯黑暗」"]
-            },
-            {
-                "size": "2.4vh",
-                "list": ["「哪儿有人会喜欢孤独", "只是害怕失望罢了」"]
-            },
-            {
-                "size": "2.4vh",
-                "list": ["「我几次朝着夜幕伸出手去，指尖毫无所触", "那小小的光点总是同指尖保持着一点点不可触及的距离」"]
+
+    const mori = document.getElementById('mori');
+    const parallaxInstance = new Parallax(mori, {
+        limitY: 0
+    });
+
+
+    const inkTextList = [
+        ["「倘若周围一片漆黑", "那就只能静待眼睛习惯黑暗」"],
+        ["「哪儿有人会喜欢孤独", "只是害怕失望罢了」"],
+        ["「我几次朝着夜幕伸出手去，指尖毫无所触", "那小小的光点总是同指尖保持着一点点不可触及的距离」"],
+    ]
+
+    const inks = document.getElementById('inks');
+    inks.innerHTML = "";
+    for (let i = 0; i < inkTextList.length; i++) {
+        const content = document.createElement('div');
+        content.className = 'content heti heti--vertical';
+        for (let j = 0; j < inkTextList.length; j++) {
+            const p = document.createElement('p');
+            p.className = 'ink-item';
+            if (j != i) {
+                p.style.opacity = '0';
             }
-        ],
-        index: 0,
-        vueIsLoaded: true,
-    }).mount();
+            for (const text of inkTextList[j]) {
+                const span = document.createElement('span');
+                span.innerText = text;
+                span.setAttribute('style', 'display: block');
+                p.append(span)
+            }
+            content.append(p);
+        }
+        content.setAttribute("data-depth", `${0.6 + 0.2 * i}`);
+        inks.append(content);
+    }
+    const instance = new Parallax(inks, {limitX: 1, limitY: 15, frictionY: 0.05});
+    const inkm = document.getElementById('inkm');
+    const inkb = document.getElementById('inkb');
+    const instanceM = new Parallax(inkm, {limitX: 1, limitY: 15, frictionY: 0.05});
+    const instanceB = new Parallax(inkb, {limitX: 1, limitY: 15, frictionY: 0.05});
+
+
 
 </script>
 </body>

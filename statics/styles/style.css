@@ -96,6 +96,13 @@ h2 {
     margin: 0.5vw 0;
 }
 
+.info h3 {
+    line-height: 20px;
+    margin-bottom: 6px;
+}
+
+
+
 .sakura h1 {
     font-size: 5.4vw;
 }
@@ -109,6 +116,20 @@ h2 {
     filter: hue-rotate(30deg) brightness(90%) saturate(80%);
 }
 
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0%);
+        /*background-position-x: 0%;*/
+    }
+    100% {
+        transform: translateX(5%);
+        /*background-position-x: 100%;*/
+    }
+}
+
+.animation-on {
+    animation-delay: 5s;
+}
 
 .tree1 {
     height: 120vh;
@@ -121,6 +142,11 @@ h2 {
     background-size: 60% 100%;
     left: -10% !important;
     top: -10% !important;
+    transition: transform 5s;
+}
+.animation-on .tree1 {
+    animation: moveLeft 35s infinite alternate ease-in-out;
+    transition: none;
 }
 
 .tree2 {
@@ -135,6 +161,10 @@ h2 {
     left: -10% !important;
     top: -10% !important;
 }
+.animation-on .tree2 {
+    animation: moveLeft 25s infinite alternate ease-in-out;
+    transition: none;
+}
 
 .tree3 {
     height: 120vh;
@@ -142,12 +172,16 @@ h2 {
     opacity: 0.8;
     background-image: url("../imgs/tree2.svg");
     background-position-y: 0vh;
-    background-position-x: 25%;
+    background-position-x: 60%;
     background-repeat: repeat-x;
     background-size: auto 100%;
     left: -10% !important;
     top: -10% !important;
     filter: hue-rotate(30deg) saturate(60%);
+}
+.animation-on .tree3 {
+    animation: moveLeft 15s infinite alternate ease-in-out;
+    transition: none;
 }
 
 .light {
@@ -173,23 +207,39 @@ h2 {
     left: -10% !important;
     bottom: -10% !important;
 }
+.animation-on .shrub {
+    animation: moveLeft 10s infinite alternate ease-in-out;
+    transition: none;
+}
 
 .shrub.deep-0 {
     opacity: 0.2;
     background-position-x: 30%;
+}
+.animation-on .shrub.deep-0 {
+    animation: moveLeft 10s infinite alternate ease-in-out;
+    transition: none;
 }
 
 .shrub.deep-1 {
     opacity: 0.4;
     background-position-x: 60%;
 }
+.animation-on .shrub.deep-1 {
+    animation: moveLeft 20s infinite alternate ease-in-out;
+    transition: none;
+}
 
 .shrub.deep-2 {
     opacity: 0.4;
     background-position-x: -20%;
 }
+.animation-on .shrub.deep-2 {
+    animation: moveLeft 30s infinite alternate ease-in-out;
+}
+
 .no-filter {
-    /*filter: hue-rotate(60deg) brightness(100%) ;*/
+    filter: hue-rotate(60deg) brightness(100%) ;
 }
 
 
@@ -231,19 +281,44 @@ h2 {
     margin-bottom: 0.2vh;
 }
 
-.ink {
-    left: 0;
-    padding: 7vh 0 0 6vw;
+#inks {
+    display: block;
 }
 
-.ink .content {
+#inkm {
+    display: none;
+}
+
+#inkb {
+    display: none;
+}
+
+.m-ink {
+    display: none;
+}
+
+.inks {
+    left: 0;
+    padding: 7vh 0 0 6vw;
+    position: relative;
+    height: 100%;
+}
+
+.inks .content {
     /*text-align: ;*/
     font-size: 3vh;
     text-shadow: 0px 0px 8px var(--textShadow);
+    padding: 7vh 0 0 10vh;
+    position: absolute !important;
+    height: 100%;
 }
 
-.ink .content p {
+.inks .content p {
     margin: 0 3vw 0 0;
+}
+
+.ink-item {
+    font-size: 2.4vh;
 }
 
 .nothing {
@@ -270,10 +345,39 @@ h2 {
 a {
     display: inline-block;
     color: var(--textColor);
-    filter: saturate(40%);
+    filter: saturate(80%) hue-rotate(60deg);
     cursor: pointer;
     text-decoration: none;
+    position: relative;
+    transition: all 400ms;
     /*padding: 0 2px;*/
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    display: inline-block;
+    /*background-color: currentColor;*/
+    background-image: linear-gradient(45deg, currentColor 0%, currentColor 100%);
+    background-size: 15px 100%;
+    background-position: 0 0;
+    transition: all 400ms;
+    opacity: 0.6;
+}
+
+a:hover {
+    filter: saturate(120%) hue-rotate(0deg);
+}
+
+a:hover::after {
+    bottom: 0px;
+    height: 2px;
+    background-image: linear-gradient(45deg, transparent 0%, transparent 25%, currentColor 25%, currentColor 75%, transparent 75%, transparent 100%);
+    opacity: 1;
 }
 
 .links {
@@ -386,4 +490,134 @@ a {
 
 .sakura footer a {
     color: #666;
+}
+
+
+.right-bracket {
+    display: inline-block;
+    width: 1.5vw;
+}
+
+.cn-name-m {
+    display: none;
+}
+
+@media only screen and (max-aspect-ratio: 10 / 10){
+    #inks {
+        display: none;
+    }
+    #inkm {
+        display: block;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 9 / 10){
+
+    * {
+        --margin-width: 25px;
+        --margin-height: 45px;
+    }
+
+    #inks {
+        display: none;
+    }
+
+    #inkm {
+        display: none;
+    }
+
+    #inkb {
+        display: block;
+    }
+
+    .m-ink {
+        display: block;
+    }
+
+    .me > .content > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info {
+        position: relative;
+        flex: 1;
+        max-width: none;
+        max-height: 70em;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.125em;
+    }
+
+    .links {
+        text-align: left;
+    }
+
+    .inks {
+        position: absolute;
+        top: 0;
+        bottom: 10vh;
+        padding: 0;
+    }
+
+    .inks .content {
+        padding: 0 0 0 4vh;
+    }
+
+    .inks .content p {
+    }
+
+    .ink-item {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 4.8vh;
+    }
+
+    h2 {
+        font-size: 2.8vh;
+    }
+
+    .info h3 {
+        font-size: 18px;
+        margin: -10px 20px 0 2px;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .friend {
+        display: none;
+    }
+
+    .heti {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    .body {
+        height: calc(100% - 100px);
+    }
+
+    h2 .right-bracket {
+        width: 1.3vh;
+    }
+
+    .info a::after {
+        content: none;
+    }
+
+    .cn-name-m {
+        display: block;
+        position: absolute;
+        bottom: 10vh;
+        left: 3vh;
+        max-width: none;
+        max-height: 70em;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.125em;
+    }
+
 }
