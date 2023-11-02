@@ -4,10 +4,6 @@
     --margin-height: 55px;
 }
 
-head, body {
-    height: 100%;
-    width: 100%;
-}
 
 .mori {
     --textColor: rgba(160, 250, 171, 1);
@@ -29,7 +25,8 @@ html, body {
     margin: 0;
     /*color: #fff;*/
     color: var(--textColor);
-    overflow: hidden;
+    /*overflow: hidden;*/
+    overflow: auto;
 }
 
 .bg

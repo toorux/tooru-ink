@@ -17,6 +17,7 @@
     </style>
 </head>
 <body class="pos-relative mori animation-on">
+<!--<div style="height: 400vh"></div>-->
 <div class="window-size pos-absolute pos-all-0 bg3"></div>
 <div class="window-size pos-absolute pos-all-0 mori-clip">
     <div id="mori" class="pos-relative">
@@ -107,6 +108,9 @@
             </div>
         </div>
     </div>
+<!--    <footer class=" filter footer">-->
+<!--        Copyright &copy; 2022 <a href="//tooru.ink">Tooru</a> - 咸鱼「彻」. All rights reserved.-->
+<!--    </footer>-->
 </div>
 
 <footer class="pos-absolute filter footer">
@@ -123,7 +127,7 @@
     const leaves = [];
     for (let i = 1; i <= 5; i++) {
         let path = `./statics/imgs/leaves/leaves${i}.svg`;
-        leaves.push(new FallItem(path, 1))
+        leaves.push(new FallItem(path, 15, undefined, true))
     }
 
     const leaves3 = document.getElementById("leaves3")
@@ -177,6 +181,15 @@
     const instanceB = new Parallax(inkb, {limitX: 1, limitY: 15, frictionY: 0.05});
 
 
+    window.addEventListener("load",function() {
+        setTimeout(function(){
+            window.scrollTo(0, 1);
+        }, 0);
+    });
+
+    /Mobile/.test(navigator.userAgent) && !location.hash && setTimeout(function () {
+        if (!pageYOffset) window.scrollTo(0, 1);
+    }, 1000);
 
 </script>
 </body>
